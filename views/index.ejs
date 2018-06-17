@@ -1414,13 +1414,18 @@
 							</div>`
 	</script>
 	<script type="text/javascript">
+		const categoryMaxVote = [35,20,20,40,20,8,30,12,20,25,20,10,25]
 		function calcTotal() {
-			check();
-			var sum = 0;
+			let cat = check();
+			let maxvote = categoryMaxVote[cat]
+			let sum = 0;
 			for (i = 0; i < oSels.length; i++) {
 				sum += new Number(oSels[i].value);
 			}
-			document.getElementById('result').innerHTML = sum;
+			let currentVote = sum*maxvote/100;
+			let exponentialVote = (Math.pow((sum/100),1.5)*maxvote)
+			exponentialVote = exponentialVote.toFixed(2)
+			document.getElementById('result').innerHTML = `${sum}</p><p>Current Vote: ${currentVote}%</p><p>Exponential Vote: ${exponentialVote}%</p>`;
 			var elem = document.querySelectorAll('.modal');
 			var instance = M.Modal.init(elem);
 
@@ -1489,6 +1494,7 @@ Your contribution has been evaluated according to [Utopian policies and guidelin
 			let textarea = document.getElementById('textarea1')
 			textarea.value = answers
 			textarea.style.height = '440px'
+			return cat
 		}
 	</script>
 
