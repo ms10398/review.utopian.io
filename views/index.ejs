@@ -1422,8 +1422,9 @@
 			for (i = 0; i < oSels.length; i++) {
 				sum += new Number(oSels[i].value);
 			}
+			let exponent = 1.85-(sum/100)
 			let currentVote = sum*maxvote/100;
-			let exponentialVote = (Math.pow((sum/100),1.5)*maxvote)
+			let exponentialVote = (Math.pow((sum/100),exponent)*maxvote)
 			exponentialVote = exponentialVote.toFixed(2)
 			document.getElementById('result').innerHTML = `${sum}</p><p>Current Vote: ${currentVote}%</p><p>Exponential Vote: ${exponentialVote}%</p>`;
 			var elem = document.querySelectorAll('.modal');
