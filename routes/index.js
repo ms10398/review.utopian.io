@@ -1004,7 +1004,7 @@ let questionnaire = [
     },
     {
       question:
-        'Did the translator provide in the contribution post all the information needed to fully evaluate the translation? How was the readibility and grammar of the post?(For example, did he indicate project name, github link and crowdin link, etc?)',
+        'Did the post include all the information needed to fully evaluate the translation? If so, how would you rate the readability and grammar of the post?',
       answers: [
         'Select your option',
         'Excellent',
