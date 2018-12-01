@@ -1728,8 +1728,7 @@
         if (category == 'translations') cat = 12;
         if (category == 'antiabuse') cat = 13;
 
-        let answers = `REPLACE WITH FEEDBACK\n\n
-                  Your contribution has been evaluated according to [Utopian policies and guidelines](https://join.utopian.io/guidelines), as well as a predefined set of questions pertaining to the category.\n\nTo view those questions and the relevant answers related to your post, [click here](https://review.utopian.io/result/${cat}/`;
+        let answers = `REPLACE WITH FEEDBACK\n\nYour contribution has been evaluated according to [Utopian policies and guidelines](https://join.utopian.io/guidelines), as well as a predefined set of questions pertaining to the category.\n\nTo view those questions and the relevant answers related to your post, [click here](https://review.utopian.io/result/${cat}/`;
         oSels = document.getElementById('form1').getElementsByTagName('select');
 
         for (i = 0; i < oSels.length; i++) {

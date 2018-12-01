@@ -1170,7 +1170,8 @@ router.get('/result/:cat/:num', function(req, res, next) {
   let category = req.params.cat;
   let ans = req.params.num;
   ans = ans.split('-');
-  ans.splice(-1, 1);
+  if(ans[ans.length-1] === "")
+    ans.splice(-1, 1);
 
   if (category < 0 || category > 13) res.render('error');
 
