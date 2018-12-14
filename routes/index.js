@@ -1052,7 +1052,7 @@ let questionnaire = [
   [
     {
       question:
-        'How aware of the anti-abuse topic discussed in the post is the author?',
+        'How aware is the author of the anti-abuse topic discussed in the post?',
       answers: [
         'Select your option',
         'It is clear that they are closely familiar with the anti-abuse topic and its details.',
@@ -1063,24 +1063,24 @@ let questionnaire = [
     },
     {
       question:
-        "What is the author's involvement level in the anti-abuse community?",
+        'How would you rate the overall value of this contribution to the anti-abuse community?',
       answers: [
         'Select your option',
-        'The author is 100% committed to, and involved in, the anti-abuse community.',
-        'The author is committed, but is mostly involved with other projects unrelated to anti-abuse community.',
-        'The author is occasionally involved in the anti-abuse community.',
-        'The author is rarely involved in anti-abuse community.'
+        'This contribution greatly helps the anti-abuse community.',
+        'This contribution helps the anti-abuse community.',
+        'This contribution moderately helps the anti-abuse community.',
+        'This contribution does not help the anti-abuse community.'
       ]
     },
     {
       question:
-        'Does the author add value to the anti-abuse community by managing, developing, suggesting or moderating ?',
+        'Is the post written in proper English?',
       answers: [
         'Select your option',
-        'The author invests a significant amount of time.',
-        'The author helps out often.',
-        'The author helps occasionally.',
-        'The author is not involved in any of these ways.'
+        'There are 0 to 3 mistakes in grammar or spelling.',
+        'The author made 3 - 6 grammar mistakes or misspellings.',
+        'The post has 6 - 10 grammar mistakes or misspellings.',
+        'The post has 11 or more cases of incorrect grammar and misspelling'
       ]
     },
     {
@@ -1090,7 +1090,7 @@ let questionnaire = [
         'Select your option',
         'The contribution greatly helps raise awareness about abuse.',
         'The contribution helps raise awareness about abuse.',
-        'The contribution somewhat raise awareness about abuse.',
+        'The contribution raises awareness about abuse somewhat.',
         'The contribution does not raise awareness about abuse.'
       ]
     },
@@ -1101,7 +1101,7 @@ let questionnaire = [
         'Select your option',
         'The contribution greatly empowers the reader to participate in antiabuse initiatives.',
         'The contribution empowers the reader to participate in antiabuse initiatives.',
-        'The contribution somewhat empowers the reader to participate in antiabuse initiatives.',
+        'The contribution slightly empowers the reader to participate in antiabuse initiatives.',
         'The contribution does not empower the reader to participate in antiabuse initiatives.'
       ]
     },
@@ -1117,23 +1117,12 @@ let questionnaire = [
       ]
     },
     {
-      question:
-        'How would you rate the overall value of this contribution to the anti-abuse community?',
-      answers: [
-        'Select your option',
-        'This contribution greatly helps the anti-abuse community.',
-        'This contribution helps the anti-abuse community.',
-        'This contribution moderately helps the anti-abuse community.',
-        'This contribution slightly helps the anti-abuse community.'
-      ]
-    },
-    {
       question: 'What is the overall volume of the blog post?',
       answers: [
         'Select your option',
-        'More than 1,000 words',
-        '750 - 1,000 words',
-        '500 - 749 words',
+        'More than 850 words.',
+        '676-850 words.',
+        '501-675 words.',
         'Less than 500 words'
       ]
     },
@@ -1155,7 +1144,28 @@ let questionnaire = [
         'Yes, at least 4 distinguishable instances of relevant graphic or video content were included.',
         'Yes, between 2 and 3 distinguishable instances of relevant graphic or video content were included.',
         'A single instance of relevant graphic or video content was included.',
-        'No graphic or video content was included, or the content was irrelevant.'
+        'No graphic or video content was included',
+      ]
+    },
+    {
+      question:
+        'Did you enjoy reading the contribution?',
+      answers: [
+        'Select your option',
+        'I enjoyed reading this post, it was excellent.',
+        'The post was informative but I didn\'t enjoyed reading it.',
+        'I did not enjoy reading this post at all',
+      ]
+    },
+    {
+      question:
+        'What is the author\'s involvement level in the anti-abuse community?',
+      answers: [
+        'Select your option',
+        'The author is 100% committed to, and involved in, the anti-abuse community.',
+        'The author often contributes, but is mostly involved with other projects unrelated to anti-abuse community.',
+        'The author is occasionally involved in the anti-abuse community.',
+        'The author is rarely involved in anti-abuse community or is new to it.',
       ]
     }
   ]
@@ -1169,7 +1179,11 @@ router.get('/', function(req, res, next) {
 router.get('/result/:cat/:num', function(req, res, next) {
   let category = req.params.cat;
   let ans = req.params.num;
-  ans = ans.split('-');
+  if ( ans.indexOf('-') === -1 )
+    ans = Array.from(ans)
+  else
+    ans = ans.split('-');
+  console.log(ans)
   if(ans[ans.length-1] === "")
     ans.splice(-1, 1);
 
