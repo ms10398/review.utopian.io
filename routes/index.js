@@ -473,7 +473,7 @@ let questionnaire = [
         'More than 3 distinctive, relatively complex designs were provided.',
         'Between 2 and 3; the designs were complex and took a fair amount of work.',
         'Only one distinctive design was provided among the provided designs.',
-        'Only Single Design was provided.',
+        'Only single design was provided.',
         'The number of design variations provided was lower than the number requested by the project owner and/or the apparent work invested was negligible.'
       ]
     },
@@ -494,7 +494,7 @@ let questionnaire = [
         'Select your option',
         'Excellent, no mistakes within the design.',
         'Very good, open for improvements.',
-        'Good but the design has some serious flaws that needs to be corrected.',
+        'Good but the design has some serious flaws that need to be corrected.',
         'Bad. The design does not follow graphics standard and is barely usable.',
       ]
     },
@@ -514,11 +514,11 @@ let questionnaire = [
         'What is the visibility impact on OS community and the popularity of the project?',
       answers: [
         'Select your option',
-        'The project is significantly important for the OS community. The number of the repository\'s stars and forks is more than 5000.',
-        'The project has established a large community of contributors and users. The number of the repository\'s stars and forks is more than 1000.',
-        'The project is know in the community and had many contributors and users. The number of the repository\'s stars and forks is more than 500 or the project has been actively developed for at least one year.',
-        'The project is known among people but is not so popular. The number of the repository\'s stars and forks is more than 100 or the project has been actively developed for at least 6 months.',
-        'The project has some contributors and users. It is known among a smaller group of people. The number of the repository\'s stars and forks is more than 20.',
+        'The project is significantly important for the OS community. The number of the repository\'s stars and forks is greater than 5000.',
+        'The project has established a large community of contributors and users. The number of the repository\'s stars and forks is greater than 1000.',
+        'The project is know in the community and had many contributors and users. The number of the repository\'s stars and forks is greater than 500 or the project has been actively developed for at least one year.',
+        'The project is known among people but is not so popular. The number of the repository\'s stars and forks is greater than 100 or the project has been actively developed for at least 6 months.',
+        'The project has some contributors and users. It is known among a smaller group of people. The number of the repository\'s stars and forks is greater than 20.',
         'The project is new or hasn\'t been popular. The number of the repository\'s stars and forks is less than 20.',
       ]
     },
@@ -665,7 +665,7 @@ let questionnaire = [
         '2-3 substantial concepts covered in the tutorial',
         '1 substantial concept covered in the tutorial',
         'More than 5 substantial concepts covered in the tutorial',
-        'No Substantial concepts covered',
+        'No substantial concepts covered',
       ]
     },
     {
