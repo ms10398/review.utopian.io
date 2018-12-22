@@ -472,29 +472,9 @@ let questionnaire = [
         'Select your option',
         'More than 3 distinctive, relatively complex designs were provided.',
         'Between 2 and 3; the designs were complex and took a fair amount of work.',
-        'Only one distinctive design was provided or the provided designs are too similar.',
+        'Only one distinctive design was provided among the provided designs.',
+        'Only Single Design was provided.',
         'The number of design variations provided was lower than the number requested by the project owner and/or the apparent work invested was negligible.'
-      ]
-    },
-    {
-      question: 'Is the whole contribution a result of own work?',
-      answers: [
-        'Select your option',
-        'Yes.',
-        'Some third party assets were used but all of them are usable for the contribution actual purpose. The assets were accordingly edited and not simply downloaded and used.',
-        'Other assets were provided by the project owner.',
-        'Most assets used were third party assets and contributor did not make additional effort to incorporate them in the contribution.'
-      ]
-    },
-    {
-      question:
-        'Was the contribution used in the project? (ex.: the graphic design is already utilized in play store, project website or got merged into the official repository)',
-      answers: [
-        'Select your option',
-        'Yes, and the contributor provided clear evidence of it in their post.',
-        'It was not used, but the project owner liked it and considered using it.',
-        'It was not used, but is of very high quality.',
-        'It was not used as it provides no value to the project.'
       ]
     },
     {
@@ -502,7 +482,7 @@ let questionnaire = [
         'Does the contribution include files for immediate use in all requested formats?',
       answers: [
         'Select your option',
-        'Yes, all required file formats were included.',
+        'Yes, all requested file formats were provided with a clear files structure.',
         'Most requested file formats requested by project owner were provided, but not all.',
         'No, submitted files were not ready for immediate use and require editing or adjustments.',
         'No downloadable files were provided.'
@@ -513,9 +493,9 @@ let questionnaire = [
       answers: [
         'Select your option',
         'Excellent, no mistakes within the design.',
-        'Very good with minor mistakes that are visible in the provided files.',
-        'Good but the design has some more serious flaws that need to be corrected.',
-        'Bad. The design does not follow graphics standard and is barely usable.'
+        'Very good, open for improvements.',
+        'Good but the design has some serious flaws that needs to be corrected.',
+        'Bad. The design does not follow graphics standard and is barely usable.',
       ]
     },
     {
@@ -523,23 +503,69 @@ let questionnaire = [
         'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'Good.',
-        'Average.',
-        'Below Average.',
-        'Low Quality.'
+        'Excellent. The post contains no or very few minor mistakes.',
+        'Good. The post contains some minor mistakes in formatting or language usage that worsen the readability of the post.',
+        'Average. The post contains mistakes that should be corrected.',
+        'Low Quality. The post contains many mistakes in writing.',
       ]
     },
     {
       question:
-        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+        'What is the visibility impact on OS community and the popularity of the project?',
       answers: [
         'Select your option',
-        'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
-        'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
-        'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
+        'The project is significantly important for the OS community. The number of the repository\'s stars and forks is more than 5000.',
+        'The project has established a large community of contributors and users. The number of the repository\'s stars and forks is more than 1000.',
+        'The project is know in the community and had many contributors and users. The number of the repository\'s stars and forks is more than 500 or the project has been actively developed for at least one year.',
+        'The project is known among people but is not so popular. The number of the repository\'s stars and forks is more than 100 or the project has been actively developed for at least 6 months.',
+        'The project has some contributors and users. It is known among a smaller group of people. The number of the repository\'s stars and forks is more than 20.',
+        'The project is new or hasn\'t been popular. The number of the repository\'s stars and forks is less than 20.',
       ]
-    }
+    },
+    {
+      question:
+        'How would you describe the presentation of the graphics contribution in the post?',
+      answers: [
+        'Select your option',
+        'Excellent. The graphics contribution is presented in an appealing and, if possible, unique way in real use-case scenarios if applicable.',
+        'Good. The presentation is visually appealing but does not offer details to learn about the choices made during the creation process and/or contains some minor issues.',
+        'Average. The presentation includes the graphics but lacks author\'s originality and does not offer details about the graphics and/or it contains issues that should be corrected.',
+        'Low Quality. There is no visual presentation or the one provided adds no to little value to the overall presentation of the graphics.',
+      ]
+    },
+    {
+      question:
+        'Uniqueness and creativity of the graphics contribution?',
+      answers: [
+        'Select your option',
+        'It is unique, well-thought and suits the project well.',
+        'It is generic, but suits well the project\'s needs.',
+        'It is generic and lacks originality as shown with examples.',
+        'The contribution is a copy of an existing design.',
+      ]
+    },
+    {
+      question:
+        'Technical difficulty of the graphics?',
+      answers: [
+        'Select your option',
+        'Very high. The contribution consists of very complex elements, shapes and/or effects made by the contributor.',
+        'High. Majority of the contribution consists of complex elements, shapes and/or effects made by the contributor.',
+        'Medium. The contribution consists of some complex elements, shapes and/or effects made by the contributor.',
+        'Low. The contribution consists of simple elements, shapes and/or effects.',
+      ]
+    },
+    {
+      question:
+        'Is the provided design actively used by the project? (e.g. on official website, app store, in an app, software)',
+      answers: [
+        'Select your option',
+        'Yes, and it is publicly displayed or its use can be easily verified within the software/app.',
+        'It is not publicly used but the assets can be found among project\'s materials.',
+        'It was not used, but the proposed designs are of a high quality.',
+        'It was not used as it provides little to no value to the project.',
+      ]
+    },
   ],
   [
     {
@@ -638,7 +664,8 @@ let questionnaire = [
         '4-5 substantial concepts covered in the tutorial',
         '2-3 substantial concepts covered in the tutorial',
         '1 substantial concept covered in the tutorial',
-        'More than 5 substantial concepts covered in the tutorial'
+        'More than 5 substantial concepts covered in the tutorial',
+        'No Substantial concepts covered',
       ]
     },
     {
@@ -669,6 +696,7 @@ let questionnaire = [
         'Select your option',
         'Yes',
         'Yes, but it is the first entry in the series.',
+        'Yes, but it is irrelevant with the series.',
         'No, but it works just fine as a stand-alone tutorial.',
         'No, though it clearly should be'
       ]
@@ -680,6 +708,7 @@ let questionnaire = [
         'Yes, the visual components of the post were adequate in quality and quantity.',
         'The volume of visual components included was unnecessarily large.',
         'The post lacked sufficient visualization to easily learn from the content.',
+        'Visual components provided are of low quality, or not descriptive enough.',
         'No visualization was presented in this contribution.'
       ]
     },
@@ -702,7 +731,8 @@ let questionnaire = [
         'Good.',
         'Average.',
         'Below Average.',
-        'Low Quality.'
+        'Low Quality.',
+        'Unintelligible.',
       ]
     },
     {
